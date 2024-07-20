@@ -1,0 +1,30 @@
+version: '3.8'
+
+services:
+  db:
+    image: postgres:14
+    ports:
+      - "5433:5432"
+    environment:
+      - POSTGRES_DB=entrix-banking
+      - POSTGRES_USER=entrix
+      - POSTGRES_PASSWORD=password
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+  api:
+    build:
+      context: api
+    ports:
+      - "5050:5050"
+    depends_on:
+      - db
+    environment:
+      - DATABASE_URI=postgresql://entrix:password@db:5432/entrix-banking
+
+networks:
+  default:
+    name: transport
+
+volumes:
+  postgres_data:
