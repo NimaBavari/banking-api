@@ -184,7 +184,13 @@ or
 or
 
 ```
-503 Account not created.
+503 Account not updated.
+```
+
+or
+
+```
+503 Transfer failed.
 ```
 
 #### Get Transfer History
