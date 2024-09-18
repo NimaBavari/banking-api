@@ -1,8 +1,4 @@
-# Entrix Simple Banking System
-
-by Tural Mahmudov
-
-**time spent:** 8 hours
+# Simple Banking System
 
 ## Overview
 
